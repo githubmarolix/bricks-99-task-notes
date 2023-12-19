@@ -1,0 +1,76 @@
+sudo apt update
+    2  git clone https://github.com/rajeshvr7/bricks99.git
+    3  ls
+    4  apt install openjdk-17-jre -y
+    6  apt install maven -y
+    7  mvn --version
+    8  apt install mysql-server -y
+    9  mysql -u root -p
+         inside this paste these commands
+                CREATE DATABASE bricks99;
+                CREATE USER 'username'@'65.2.140.160' IDENTIFIED BY 'password';
+                GRANT ALL PRIVILEGES ON bricks99.* TO 'username'@'private ip';
+                FLUSH PRIVILEGES;
+                exit
+   11  ls
+   12  vi /etc/
+   13  cd /etc/mysql/
+   14  ls
+   15  cd mysql.conf.d/
+   16  ls
+   17  vi mysqld.cnf 
+          in this file chance
+           bind-address = 0.0.0.0
+   18  ls
+   19  vi mysql.cnf
+           in this file at down add 
+            [mysqld]
+            bind-address=0.0.0.0 
+   20  cd ..
+   24  ls
+   25  cd bricks99/
+   26  ls
+   27  cd Bricks99_BackEnd-master/
+   28  ls
+   29  cd src/
+   30  ls
+   31  cd main/
+   32  ls
+   33  cd resources/
+   34  ls
+   35  vi application.properties 
+             in this file we have to change 1.localip- private ip 
+                                            2.username which is given in database creation
+                                            3.password which is given in database creation
+   36  systemctl restart mysql
+   37  cd ../..
+   38  ls
+   39  cd main/
+   40  ls
+   41  cd java/
+   42  ls
+   43  cd com/
+   44  ls
+   45  cd marolix/
+   46  ls
+   47  cd Bricks99
+   48  ls
+   49  cd api/
+   50  ls
+   51  vi AppInfo.java 
+          in this remove 
+             @GetMapping(value = "/welcome") - original line 
+             @GetMapping(value = " ") - we have to remove /welcome
+   52  cd
+   53  ls
+   54  cd bricks99/
+   55  cd Bricks99_BackEnd-master/
+   57  ls
+   58  mvn clean package
+   59  ls
+   60  cd target/
+   61  ls
+   62  java -jar Bricks99-0.0.1-SNAPSHOT.jar 
+   OUTPUT
+          public ip:5655/bricks99/
+         
